@@ -12,6 +12,7 @@ function check_last_exit_code() {
 }
 
 
+# intended to be hooked at preexec
 function expand_aliases() {
     setopt localoptions
     local RED='\033[0;31m'
