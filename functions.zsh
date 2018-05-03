@@ -10,3 +10,18 @@ function check_last_exit_code() {
   EXIT_CODE_PROMPT+="%{$fg[cyan]%}]%{$reset_color%}"
       echo $EXIT_CODE_PROMPT
 }
+
+
+function expand_aliases() {
+    setopt localoptions
+    local RED='\033[0;31m'
+    local YEL='\033[0;33m'
+    local NC='\033[0m'
+  
+    functions[_expand_aliases]=$1
+    (($+functions[_expand_aliases])) &&
+    BUFFER=${functions[_expand_aliases]#$'\t'} &&
+    if [ $BUFFER != $1]; then
+        echo -e "${YEL}EXPANDED: \"${1}\"${NC} = ${RED}${BUFFER}${NC}"
+    fi
+}
