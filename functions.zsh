@@ -12,7 +12,6 @@ function check_last_exit_code() {
 }
 
 
-# intended to be hooked at preexec
 function expand_aliases() {
     setopt localoptions
     local RED='\033[0;31m'
@@ -22,7 +21,7 @@ function expand_aliases() {
     functions[_expand_aliases]=$1
     (($+functions[_expand_aliases])) &&
     BUFFER=${functions[_expand_aliases]#$'\t'} &&
-    if [ $BUFFER != $1]; then
+    if [ $BUFFER != $1 ]; then
         echo -e "${YEL}EXPANDED: \"${1}\"${NC} = ${RED}${BUFFER}${NC}"
     fi
 }
