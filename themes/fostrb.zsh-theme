@@ -10,7 +10,7 @@ plugins=(
 autoload -Uz add-zsh-hook
 add-zsh-hook preexec expand_aliases
 
-fpath=(~/zsh/desk/shell_plugins/zsh $fpath)
+#fpath=(~/zsh/desk/shell_plugins/zsh $fpath)
 #⌥
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}⌥%{$fg[blue]%}"
 # Close it all off by resetting the color and styles.

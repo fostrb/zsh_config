@@ -25,3 +25,8 @@ function expand_aliases() {
         echo -e "${YEL}EXPANDED: \"${1}\"${NC} = ${RED}${BUFFER}${NC}"
     fi
 }
+
+function pyclean() {
+    for f in $(find . -name "*pyc")
+        rm -f $f
+}
